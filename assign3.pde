@@ -2,7 +2,7 @@ PImage title, gameover, startNormal, startHovered, restartNormal, restartHovered
 PImage groundhogIdle, groundhogLeft, groundhogRight, groundhogDown;
 PImage bg,soil8x24, life, cabbage, stone1, stone2;
 PImage soil0, soil1, soil2, soil3, soil4, soil5;
-PImage[][] soils, stones;
+
 
 final int GAME_START = 0, GAME_RUN = 1, GAME_OVER = 2;
 int gameState = 0;
@@ -63,20 +63,10 @@ void setup() {
   
 
   // Load PImage[][] soils
-  soils = new PImage[6][5];
-  for(int i = 0; i < soils.length; i++){
-    for(int j = 0; j < soils[i].length; j++){
-      soils[i][j] = loadImage("img/soils/soil" + i + "/soil" + i + "_" + j + ".png");
-    }
-  }
+  
 
 
-  stones = new PImage[2][5];
-  for(int i = 0; i < stones.length; i++){
-    for(int j = 0; j < stones[i].length; j++){
-      stones[i][j] = loadImage("img/stones/stone" + i + "/stone" + i + "_" + j + ".png");
-    }
-  }
+ 
 
   // Initialize player
   playerX = PLAYER_INIT_X;
@@ -151,7 +141,7 @@ void draw() {
       for (int j = 0; j < soilHealth[i].length; j++) {
 
         
-        int areaIndex = floor(j / 4);
+      
      
        image(soil8x24, 0,0);
       }
